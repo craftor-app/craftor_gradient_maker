@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import 'gradient_picker/gradient_picker.dart';
+import 'gradient_maker/gradient_maker.dart';
 import 'models/element_gradient.dart';
 import 'widgets/hover_button.dart';
 
@@ -19,17 +19,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Craftor Gradient Maker',
       theme: AppTheme.getThemeData(context),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({
+    super.key,
+  });
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -229,41 +229,39 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         } else {
           return Center(
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  16.h,
-                  Image.asset(
-                    "/Gradient.png",
-                    width: 60,
-                    height: 60,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                16.h,
+                Image.asset(
+                  "/Gradient.png",
+                  width: 60,
+                  height: 60,
+                ),
+                10.h,
+                Text(
+                  "Craftor ".toUpperCase(),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    letterSpacing: 1.5,
+                    color: AppTheme.textColor,
+                    fontWeight: FontWeight.bold,
                   ),
-                  10.h,
-                  Text(
-                    "Craftor ".toUpperCase(),
+                ),
+                10.h,
+                const Divider(),
+                10.h,
+                Text(
+                    "Sorry! but please adjust the window size upto 780x500."
+                        .toUpperCase(),
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 12,
                       letterSpacing: 1.5,
                       color: AppTheme.textColor,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  10.h,
-                  const Divider(),
-                  10.h,
-                  Text(
-                      "Sorry! but please adjust the window size upto 780x500."
-                          .toUpperCase(),
-                      style: const TextStyle(
-                        fontSize: 12,
-                        letterSpacing: 1.5,
-                        color: AppTheme.textColor,
-                      )),
-                  10.h,
-                ],
-              ),
+                    )),
+                10.h,
+              ],
             ),
           );
         }

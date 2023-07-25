@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:craftor_gradient_picker/gradient_picker/linear_gradient.dart';
+import 'package:craftor_gradient_picker/gradient_maker/linear_gradient.dart';
 import 'package:craftor_gradient_picker/helpers.dart';
 import 'package:craftor_gradient_picker/widgets/hover_button.dart';
 import 'package:flutter/material.dart';
