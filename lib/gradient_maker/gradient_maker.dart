@@ -66,70 +66,19 @@ class _GradientMakerState extends State<GradientMaker> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Craftor Gradient maker".toUpperCase(),
-                          style: const TextStyle(
-                            fontSize: 16,
-                            letterSpacing: 1.5,
-                            color: AppTheme.textColor,
-                            fontWeight: FontWeight.bold,
-                          )),
-                      5.h,
-                      Row(
-                        children: [
-                          Text("Built by solo developer ".toUpperCase(),
-                              style: TextStyle(
-                                fontSize: 10,
-                                letterSpacing: 1.2,
-                                color: AppTheme.textColor.withOpacity(0.7),
-                              )),
-                          InkWell(
-                            onTap: () {
-                              launchUrlString("https://anshrathod.com");
-                            },
-                            child: Text(
-                              "ansh rathod".toUpperCase(),
-                              style: TextStyle(
-                                fontSize: 10,
-                                decoration: TextDecoration.underline,
-                                letterSpacing: 1.2,
-                                color: Colors.blue.shade300.withOpacity(0.7),
-                              ),
-                            ),
-                          ),
-                          Text(". part of the ".toUpperCase(),
-                              style: TextStyle(
-                                fontSize: 10,
-                                letterSpacing: 1.2,
-                                color: AppTheme.textColor.withOpacity(0.7),
-                              )),
-                          InkWell(
-                            onTap: () {
-                              launchUrlString("https://use-craftor.com");
-                            },
-                            child: Text(
-                              "Craftor".toUpperCase(),
-                              style: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.underline,
-                                letterSpacing: 1.2,
-                                color: Colors.blue.shade300.withOpacity(0.7),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                  Text("Craftor Gradient maker".toUpperCase(),
+                      style: const TextStyle(
+                        fontSize: 16,
+                        letterSpacing: 1.5,
+                        color: AppTheme.textColor,
+                        fontWeight: FontWeight.bold,
+                      )),
                   const Spacer(),
                   HoverButton(
                     onTap: () {
                       launchUrlString("https://x.com/use-craftor");
                     },
-                    padding: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(4),
                     color: AppTheme.selectedColor,
                     hoverColor: AppTheme.selectedSelectedColor.withOpacity(0.6),
                     decoration: BoxDecoration(
@@ -148,7 +97,7 @@ class _GradientMakerState extends State<GradientMaker> {
                       launchUrlString(
                           "https://github.com/use-craftor/gradient_picker");
                     },
-                    padding: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(4),
                     color: AppTheme.selectedColor,
                     hoverColor: AppTheme.selectedSelectedColor.withOpacity(0.6),
                     decoration: BoxDecoration(

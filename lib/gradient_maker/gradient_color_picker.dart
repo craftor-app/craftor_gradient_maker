@@ -82,11 +82,13 @@ class GradientColorPickerState extends State<GradientColorPicker> {
           var offset = renderBox!.localToGlobal(Offset.zero);
           if (size.width - offset.dx < renderBox.size.width + 10) {
             offset = Offset(offset.dx - renderBox.size.width, offset.dy);
+          }
+          setState(() {
             position = Offset(
-              offset.dx,
+              offset.dx - 280,
               MediaQuery.sizeOf(context).height - widget.height - 80,
             );
-          }
+          });
           setState(() {
             entry = OverlayEntry(
               maintainState: true,
@@ -134,7 +136,7 @@ class GradientColorPickerState extends State<GradientColorPicker> {
                               cursor: SystemMouseCursors.move,
                               child: Container(
                                 height: 20,
-                                color: AppTheme.selectedSelectedColor,
+                                color: AppTheme.bgColor,
                               ),
                             ),
                           ),
