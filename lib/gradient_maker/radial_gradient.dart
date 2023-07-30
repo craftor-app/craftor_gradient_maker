@@ -126,7 +126,7 @@ class _RadialGradientBoxState extends State<RadialGradientBox> {
                       borderRadius: BorderRadius.circular(10),
                       gradient: RadialGradient(
                         center: center,
-                        focal: focalCenter,
+                        // focal: focalCenter,
                         stops: widget.value.stops,
                         focalRadius: 0,
                         radius: 0.5,
@@ -135,8 +135,8 @@ class _RadialGradientBoxState extends State<RadialGradientBox> {
                     ),
                   ),
                   Positioned(
-                    left: offset.dx - circleWidth / 2,
-                    top: offset.dy - circleHeight / 2,
+                    left: offset.dx - circleWidth,
+                    top: offset.dy - circleHeight,
                     child: DeferPointer(
                       child: GestureDetector(
                         onPanUpdate: (details) {
@@ -158,34 +158,36 @@ class _RadialGradientBoxState extends State<RadialGradientBox> {
                               shape: BoxShape.circle,
                               border:
                                   Border.all(width: 1, color: Colors.white)),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: focalOffset.dx - 5,
-                                top: focalOffset.dy - 5,
-                                child: GestureDetector(
-                                  onPanUpdate: (v) {
-                                    final delta = v.delta;
-                                    final rect = Rect.fromCenter(
-                                        center: const Offset(100, 100),
-                                        width: circleWidth,
-                                        height: circleHeight);
-                                    _updateFocal(
-                                        delta,
-                                        const Size(circleWidth, circleHeight),
-                                        rect);
-                                  },
-                                  child: Container(
-                                    width: 10,
-                                    height: 10,
-                                    decoration: const BoxDecoration(
-                                        color: Colors.white,
-                                        shape: BoxShape.circle),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+
+                          //NOTE: Focalpoint is too buggy or I'm too dumb to use it
+                          // child: Stack(
+                          //   children: [
+                          //     Positioned(
+                          //       left: focalOffset.dx - 5,
+                          //       top: focalOffset.dy - 5,
+                          //       child: GestureDetector(
+                          //         onPanUpdate: (v) {
+                          //           final delta = v.delta;
+                          //           final rect = Rect.fromCenter(
+                          //               center: const Offset(100, 100),
+                          //               width: circleWidth,
+                          //               height: circleHeight);
+                          //           _updateFocal(
+                          //               delta,
+                          //               const Size(circleWidth, circleHeight),
+                          //               rect);
+                          //         },
+                          //         child: Container(
+                          //           width: 10,
+                          //           height: 10,
+                          //           decoration: const BoxDecoration(
+                          //               color: Colors.white,
+                          //               shape: BoxShape.circle),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                         ),
                       ),
                     ),

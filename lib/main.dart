@@ -85,119 +85,128 @@ class _MyHomePageState extends State<MyHomePage> {
                                 const BoxDecoration(color: AppTheme.bgColor),
                             width: 350,
                             height: 450,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  16.h,
-                                  Image.asset(
-                                    "/Gradient.png",
-                                    width: 60,
-                                    height: 60,
-                                  ),
-                                  10.h,
-                                  Text(
-                                    "Craftor ".toUpperCase(),
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      letterSpacing: 1.5,
-                                      color: AppTheme.textColor,
-                                      fontWeight: FontWeight.bold,
+                            child: SingleChildScrollView(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    16.h,
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.asset(
+                                        "/gradient.jpeg",
+                                        width: 60,
+                                        height: 60,
+                                      ),
                                     ),
-                                  ),
-                                  10.h,
-                                  const Divider(),
-                                  10.h,
-                                  Text(
-                                      "Your code is copied to clipboard!"
-                                          .toUpperCase(),
+                                    10.h,
+                                    Text(
+                                      "Craftor ".toUpperCase(),
                                       style: const TextStyle(
-                                        fontSize: 12,
+                                        fontSize: 16,
                                         letterSpacing: 1.5,
                                         color: AppTheme.textColor,
-                                      )),
-                                  10.h,
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                        color: AppTheme.selectedSelectedColor,
+                                        fontWeight: FontWeight.bold,
                                       ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text(text,
+                                    ),
+                                    10.h,
+                                    const Divider(),
+                                    10.h,
+                                    Text(
+                                        "Your code is copied to clipboard!"
+                                            .toUpperCase(),
+                                        style: const TextStyle(
+                                          fontSize: 12,
+                                          letterSpacing: 1.5,
+                                          color: AppTheme.textColor,
+                                        )),
+                                    10.h,
+                                    Padding(
+                                      padding: const EdgeInsets.all(12.0),
+                                      child: Container(
+                                        decoration: const BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
+                                          color: AppTheme.selectedSelectedColor,
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(text,
+                                              style: const TextStyle(
+                                                fontSize: 12,
+                                                letterSpacing: 1.5,
+                                              )),
+                                        ),
+                                      ),
+                                    ),
+                                    10.h,
+                                    const Divider(),
+                                    10.h,
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: HoverTextButton(
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                    AppTheme.defaultRadius,
+                                                border: Border.all(
+                                                    width: 0.3,
+                                                    color: AppTheme.textColor
+                                                        .withOpacity(0.3)),
+                                              ),
+                                              onTap: () => launchUrlString(
+                                                  "https://craftor.app"),
+                                              text: "Visit craftor",
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 20,
+                                                      vertical: 10),
+                                              color: AppTheme.selectedColor
+                                                  .withOpacity(0.7),
+                                              hoverColor: Colors.white,
+                                              textHoverColor:
+                                                  AppTheme.textColor,
+                                              textColor: Colors.black,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    10.h,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text("Made with ❤️ by ".toUpperCase(),
                                             style: const TextStyle(
                                               fontSize: 12,
                                               letterSpacing: 1.5,
+                                              color: AppTheme.textColor,
                                             )),
-                                      ),
-                                    ),
-                                  ),
-                                  10.h,
-                                  const Divider(),
-                                  10.h,
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: HoverTextButton(
-                                            decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  AppTheme.defaultRadius,
-                                              border: Border.all(
-                                                  width: 0.3,
-                                                  color: AppTheme.textColor
-                                                      .withOpacity(0.3)),
+                                        InkWell(
+                                          onTap: () {
+                                            launchUrlString(
+                                                "https://anshrathod.com");
+                                          },
+                                          child: Text(
+                                            "ansh rathod".toUpperCase(),
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              decoration:
+                                                  TextDecoration.underline,
+                                              letterSpacing: 1.2,
+                                              color: Colors.blue.shade300
+                                                  .withOpacity(0.7),
                                             ),
-                                            onTap: () => launchUrlString(
-                                                "https://use-craftor.com"),
-                                            text: "Visit craftor",
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 20, vertical: 10),
-                                            color: AppTheme.selectedColor
-                                                .withOpacity(0.7),
-                                            hoverColor: Colors.white,
-                                            textHoverColor: AppTheme.textColor,
-                                            textColor: Colors.black,
                                           ),
                                         ),
                                       ],
                                     ),
-                                  ),
-                                  10.h,
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text("Made with ❤️ by ".toUpperCase(),
-                                          style: const TextStyle(
-                                            fontSize: 12,
-                                            letterSpacing: 1.5,
-                                            color: AppTheme.textColor,
-                                          )),
-                                      InkWell(
-                                        onTap: () {
-                                          launchUrlString(
-                                              "https://anshrathod.com");
-                                        },
-                                        child: Text(
-                                          "ansh rathod".toUpperCase(),
-                                          style: TextStyle(
-                                            fontSize: 10,
-                                            decoration:
-                                                TextDecoration.underline,
-                                            letterSpacing: 1.2,
-                                            color: Colors.blue.shade300
-                                                .withOpacity(0.7),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             )),
                       ),

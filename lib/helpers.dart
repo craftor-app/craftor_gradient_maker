@@ -9,5 +9,5 @@ extension EmptySpace on num {
 const double boxHeight = 250.0;
 const double boxWidth = 350.0;
 
-const double circleHeight = 100;
-const double circleWidth = 100;
+const double circleHeight = 10;
+const double circleWidth = 10;
