@@ -61,9 +61,9 @@ class ElementGradient {
 
   String getString() {
     if (selectedGradient == "Linear") {
-      return "LinearGradient(\n   begin: $linearStart,\n   end: $linearEnd,\n   colors: ${colors.map((e) => "Color(${e.value})").toList()}  ,\n  stops: $stops,\n)";
+      return "LinearGradient(\n   begin: $linearStart,\n   end: $linearEnd,\n   colors: ${colors.map((e) => "Color(${e.value})").toList()},\n  stops: $stops,\n)";
     } else if (selectedGradient == "Radial") {
-      return "RadialGradient(\n  center: $radialCenter,\n  focal: $radialFocal,\n  colors: ${colors.map((e) => "Color(${e.value})").toList()},\n  stops: $stops,\n)";
+      return "RadialGradient(\n  center: $radialCenter,\n  focal: $radialFocal,\n  colors: ${colors.map((e) => "Color(${e.value})").toList()},\n  stops: $stops,\n   radius: 0.5,\n)";
     } else {
       return "SweepGradient(\n  startAngle: $sweepStartAngle,\n  center: $sweepCenter,\n   endAngle: $sweepEndAngle,\n   colors: ${colors.map((e) => "Color(${e.value})").toList()},\n   stops: $stops,\n)";
     }

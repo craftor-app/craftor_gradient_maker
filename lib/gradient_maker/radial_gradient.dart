@@ -56,9 +56,9 @@ class _RadialGradientBoxState extends State<RadialGradientBox> {
   void _updateCenter(Offset delta, Size size, rect) {
     final newValue = offset + delta;
     if (newValue.dx >= -50 &&
-        newValue.dx <= size.width - 60 &&
+        newValue.dx <= size.width + 50 &&
         newValue.dy >= -50 &&
-        newValue.dy <= size.height - 60) {
+        newValue.dy <= size.height + 50) {
       setState(() {
         center = FractionalOffset.fromOffsetAndRect(offset, rect);
         offset += delta;
@@ -67,20 +67,20 @@ class _RadialGradientBoxState extends State<RadialGradientBox> {
     widget.onChanged(offset, focalOffset, center, focalCenter);
   }
 
-  void _updateFocal(Offset delta, Size size, rect) {
-    if (focalOffset.dx + delta.dx > 0 &&
-        focalOffset.dx + delta.dx < 90 &&
-        focalOffset.dy + delta.dy > 0 &&
-        focalOffset.dy + delta.dy < 90) {
-      setState(() {
-        focalCenter = FractionalOffset.fromOffsetAndRect(focalOffset, rect);
-        focalOffset += delta;
-      });
-      widget.onChanged(offset, focalOffset, center, focalCenter);
-    } else {
-      return;
-    }
-  }
+  // void _updateFocal(Offset delta, Size size, rect) {
+  //   if (focalOffset.dx + delta.dx > 0 &&
+  //       focalOffset.dx + delta.dx < 90 &&
+  //       focalOffset.dy + delta.dy > 0 &&
+  //       focalOffset.dy + delta.dy < 90) {
+  //     setState(() {
+  //       focalCenter = FractionalOffset.fromOffsetAndRect(focalOffset, rect);
+  //       focalOffset += delta;
+  //     });
+  //     widget.onChanged(offset, focalOffset, center, focalCenter);
+  //   } else {
+  //     return;
+  //   }
+  // }
 
   GlobalKey key = GlobalKey();
 
@@ -135,8 +135,14 @@ class _RadialGradientBoxState extends State<RadialGradientBox> {
                     ),
                   ),
                   Positioned(
-                    left: offset.dx - circleWidth,
-                    top: offset.dy - circleHeight,
+                    left: center
+                        .withinRect(
+                            const Rect.fromLTWH(0, 0, boxWidth, boxHeight))
+                        .dx,
+                    top: center
+                        .withinRect(
+                            const Rect.fromLTWH(0, 0, boxWidth, boxHeight))
+                        .dy,
                     child: DeferPointer(
                       child: GestureDetector(
                         onPanUpdate: (details) {

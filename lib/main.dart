@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
                                       child: Image.asset(
-                                        "/gradient.jpeg",
+                                        "assets/gradient.jpeg",
                                         width: 60,
                                         height: 60,
                                       ),
@@ -131,11 +131,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Text(text,
-                                              style: const TextStyle(
-                                                fontSize: 12,
-                                                letterSpacing: 1.5,
-                                              )),
+                                          child: SelectableText(
+                                            text,
+                                            style: const TextStyle(
+                                              fontSize: 12,
+                                              letterSpacing: 1.5,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -244,7 +246,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 16.h,
                 Image.asset(
-                  "/Gradient.png",
+                  "/assets/gradient.jpeg",
                   width: 60,
                   height: 60,
                 ),
@@ -264,6 +266,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(
                     "Sorry! but please adjust the window size upto 780x500."
                         .toUpperCase(),
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontSize: 12,
                       letterSpacing: 1.5,

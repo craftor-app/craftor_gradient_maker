@@ -80,7 +80,8 @@ class _CustomSliderState extends State<CustomSlider> {
                           final clampedValue = newValue.clamp(0, width);
                           pointerOffsets[index] =
                               Offset(clampedValue.toDouble(), 0);
-                          pointerValues[index] = clampedValue / width;
+                          pointerValues[index] = double.parse(
+                              (clampedValue / width).toStringAsFixed(2));
                           pointerValues = [...pointerValues];
                         });
 
