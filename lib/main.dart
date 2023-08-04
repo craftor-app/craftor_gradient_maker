@@ -245,10 +245,13 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 16.h,
-                Image.asset(
-                  "/assets/gradient.jpeg",
-                  width: 60,
-                  height: 60,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    "assets/gradient.jpeg",
+                    width: 60,
+                    height: 60,
+                  ),
                 ),
                 10.h,
                 Text(
